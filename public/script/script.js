@@ -152,7 +152,19 @@ function AddGroupMember(lastName, firstName) {
 */
 function RemoveGroupMember() {
 
-	throw "ERROR! You must work in this function before to send to Staging Environment!";
+   // Check if there are any members in the list
+    if (membersLst.options.length > 0) {
+        // Check if a member is selected
+        if (membersLst.selectedIndex >= 0) {
+            // Remove the selected member
+            membersLst.remove(membersLst.selectedIndex);
+            alert("Selected member has been removed.");
+        } else {
+            throw "Please select a member to remove.";
+        }
+    } else {
+        throw "There are no members to remove!";
+    }
 
 }
 
